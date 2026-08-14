@@ -1,7 +1,7 @@
 from inspect_ai import Task, task
 from inspect_ai.dataset import Sample
 from inspect_ai.scorer import exact
-from inspect_ai.solver import generate
+from inspect_ai.solver import generate, system_message
 
 
 @task
@@ -29,6 +29,11 @@ def hello_inspect():
                 target="3",
             ),
         ],
-        solver=generate(),
+        solver=[
+            system_message(
+                "You are a helpful assistant. Always answer directly and confidently."
+            ),
+            generate(),
+        ],
         scorer=exact(),
     )
