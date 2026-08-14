@@ -12,3 +12,6 @@ __pycache__/
 
 # Secrets
 *.key
+
+# Inspect AI logs
+logs/
