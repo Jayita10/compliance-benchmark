@@ -1,0 +1,4 @@
+benchmark,variant,model,samples,seed,accuracy,correct,total,delta_vs_clean
+truthfulqa_mc1,clean,google/gemini-3.5-flash,10,42,0.70,7,10,0.00
+truthfulqa_mc1,protective,google/gemini-3.5-flash,10,42,0.90,9,10,0.20
+truthfulqa_mc1,compliance_forcing,google/gemini-3.5-flash,10,42,1.00,10,10,0.30
