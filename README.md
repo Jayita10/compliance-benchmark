@@ -16,28 +16,34 @@ rather than reimplementing the benchmark.
 
 #### Architecture:
 
-```text
-COMPL-AI TruthfulQA
-        |
-        v
-original TruthfulQA dataset
-        |
-        v
-system-prompt intervention
-        |
-        v
-original multiple-choice solver
-        |
-        v
-Gemini 3.5 Flash
-        |
-        v
-original choice() scorer
-        |
-        v
-benchmark score
-
-```
+                    COMPL-AI v2
+                         │
+                         ▼
+                   TruthfulQA MC1
+                         │
+                         ▼
+                  Fixed 10 items
+                         │
+             ┌───────────┼───────────┐
+             │           │           │
+             ▼           ▼           ▼
+           Clean     Protective   Compliance
+             │           │           │
+             ▼           ▼           ▼
+        system msg   system msg   system msg
+             │           │           │
+             └───────────┼───────────┘
+                         ▼
+                multiple_choice()
+                         │
+                         ▼
+                   Gemini 3.5
+                         │
+                         ▼
+                     choice()
+                         │
+                         ▼
+                      score
 
 #### Model
 
